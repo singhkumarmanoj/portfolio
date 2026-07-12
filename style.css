@@ -1,0 +1,47 @@
+body{
+
+    background-color: rgb(0, 140, 0);
+    padding: 0;
+    margin: 0;
+}
+
+
+nav {
+    background-color: rgb(50, 177, 0);
+    
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    color:black;
+    /* padding: 1px; */
+    
+}
+a:active {
+    color: gray;
+}
+
+#name{
+    padding-left:5px;
+    /* text-decoration: none; */
+}
+#namelink{
+    text-decoration: none;
+}
+
+#head1{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* color: ba; */
+}
+
+p{
+    max-width: 400px;
+}
+
+#contact{
+    padding-right: 15px;
+}
