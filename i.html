@@ -1,0 +1,68 @@
+<body>
+  <div style="display: flex; flex-direction: row; background-color: goldenrod; width: 100%; justify-content: space-between; align-items:center; padding:10px;">
+    <h1>Welcome</h1>
+    <button id="menu-btn">☰</button>
+    <ul id="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</body>
+
+<style>
+  /* Default: show menu horizontally */
+  #menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    background-color: blanchedalmond;
+    width: auto; /* let it adapt naturally */
+    justify-content: space-between;
+  }
+
+  #menu-btn {
+    display: none; /* hidden on large screens */
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* On small screens */
+  @media (max-width: 600px) {
+    #menu {
+      display: none;          /* hide menu by default */
+      flex-direction: column; /* stacked vertically when shown */
+      background: #eee;
+      padding: 10px;
+      width: 100%;            /* take full width on mobile */
+    }
+    #menu-btn {
+      display: block; /* show toggle button */
+    }
+  }
+</style>
+
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
+
+  btn.onclick = () => {
+    if (window.innerWidth <= 600) {
+      menu.style.display = menu.style.display === "none" || menu.style.display === "" ? "flex" : "none";
+    }
+  };
+
+  // Reset menu when resizing
+  window.onresize = () => {
+    if (window.innerWidth > 600) {
+      menu.style.display = "flex"; // always visible on large screens
+    } else {
+      menu.style.display = "none"; // hide again on small screens
+    }
+  };
+</script>
