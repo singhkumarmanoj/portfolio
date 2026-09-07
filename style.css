@@ -58,4 +58,5 @@ a:active {
     
     margin-top: 15px;
     max-width: 450px;
+    min-width: 445px;
 }
